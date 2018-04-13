@@ -1,0 +1,7 @@
+E:\MyProjects\ProductTest\DataAccess\bin\Release\DataAccess.dll
+E:\MyProjects\ProductTest\DataAccess\bin\Release\DataAccess.pdb
+E:\MyProjects\ProductTest\DataAccess\bin\Release\Commonable.dll
+E:\MyProjects\ProductTest\DataAccess\bin\Release\System.Data.SQLite.dll
+E:\MyProjects\ProductTest\DataAccess\obj\Release\ResolveAssemblyReference.cache
+E:\MyProjects\ProductTest\DataAccess\obj\Release\DataAccess.dll
+E:\MyProjects\ProductTest\DataAccess\obj\Release\DataAccess.pdb

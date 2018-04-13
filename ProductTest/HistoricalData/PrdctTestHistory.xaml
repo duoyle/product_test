@@ -1,0 +1,92 @@
+﻿<Window x:Class="ProductTest.PrdctTestHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="盐雾试验历史数据" Height="700" Width="1024" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" FontSize="13">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="280*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">从</Label>
+            <DatePicker Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="140" x:Name="dpStart"/>
+            <Label Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">到</Label>
+            <DatePicker Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Right" Width="140" x:Name="dpEnd"/>
+            <Label Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Right">品号：</Label>
+            <TextBox Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbPrdctNumber" Width="120" Height="21"/>
+            <Label Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Right">处理类型：</Label>
+            <TextBox Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbTreatType" Width="120" Height="21"/>
+            <Button Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center" Content="查询" Width="78"
+                    x:Name="btnSearch" Click="btnSearch_Click"/>
+            <Button Grid.Column="9" HorizontalAlignment="Center" VerticalAlignment="Center" Content="导出EXCEL" Width="78"
+                    x:Name="btnExport" Click="btnExport_Click"/>
+        </Grid>
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" Name="dgPrdctTest" GridLinesVisibility="None" VerticalAlignment="Stretch" RowHeight="22"
+                SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" RowHeaderWidth="0" Background="White" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="70" CanUserSort="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SerNumber}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="序号" Binding="{Binding SerNumber, Mode=TwoWay}" Width="80" Visibility="Hidden"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id, Mode=TwoWay}" Width="100" Visibility="Hidden"/>
+                <DataGridTextColumn Header="品号" Binding="{Binding PrdctNumber, Mode=TwoWay}" Width="100"/>
+                <DataGridTextColumn Header="处理类型" Binding="{Binding TreatType, Mode=TwoWay}" Width="100"/>
+                <DataGridTextColumn Header="白锈时长" Binding="{Binding WeDuration, Mode=TwoWay}" Width="68"/>
+                <DataGridTextColumn Header="红锈时长" Binding="{Binding ReDuration, Mode=TwoWay}" Width="68"/>
+                <DataGridTextColumn Header="开始时间" Binding="{Binding StartTime, Mode=TwoWay}" Width="140"/>
+                <DataGridTextColumn Header="白锈LOSS" Binding="{Binding WeLossTime, Mode=TwoWay}" Width="70"/>
+                <DataGridTextColumn Header="红锈LOSS" Binding="{Binding ReLossTime, Mode=TwoWay}" Width="70"/>
+                <DataGridTextColumn Header="白锈结束时间" Binding="{Binding WeEndTime, Mode=TwoWay}" Width="140"/>
+                <DataGridTextColumn Header="红锈结束时间" Binding="{Binding ReEndTime, Mode=TwoWay}" Width="140"/>
+                <DataGridTextColumn Header="白锈结果" Binding="{Binding WeTestResult, Mode=TwoWay}" Width="68"/>
+                <DataGridTextColumn Header="红锈结果" Binding="{Binding ReTestResult, Mode=TwoWay}" Width="68"/>
+                <DataGridTextColumn Header="备注" Binding="{Binding Remark, Mode=TwoWay}" Width="140"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="删除" Click="MenuItem_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="转到" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black"/>
+                <TextBox Name="tbxPageNum1" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Text="1" />
+                <TextBlock Text="页" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black"/>
+                <Button Content="GO" Width="30"  Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Name="btnGo1" Click="btnGo1_Click" />
+                <Button Name="btnUp1" Width="50" Content="上一页" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Click="btnUp1_Click" />
+                <Button Name="btnNext1" Width="50" Content="下一页" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Click="btnNext1_Click" />
+                <TextBlock Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black">
+                <TextBlock Text="【共" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black"/>   
+                <TextBlock Name="tbkTotal1" Foreground="Red" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Text="0"/>   
+                <TextBlock Text="页】" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black"/>   
+                <TextBlock Text="【当前" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black"/>   
+                <TextBlock Name="tbkCurrentsize1" Foreground="Red" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Text="1"/>   
+                <TextBlock Text="页】" Margin="0,0,5,0" FontSize="11" VerticalAlignment="Center" Foreground="Black"/></TextBlock>
+            </StackPanel>
+        </Grid>
+        <ProgressBar Grid.Row="1" x:Name="pbLoadData" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Height="17" Width="160" Visibility="Hidden" Opacity="0.8"></ProgressBar>
+    </Grid>
+</Window>

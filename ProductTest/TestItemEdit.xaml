@@ -1,0 +1,39 @@
+﻿<Window x:Class="ProductTest.TestItemEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="编辑试验数据" Height="330" Width="390" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"
+        WindowStyle="SingleBorderWindow" ResizeMode="NoResize" FontSize="13">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">品号：</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbPrdctNum" IsReadOnly="True" Width="179" Height="21"/>
+        <Button x:Name="btnSelPrdct" Grid.Row="0" Grid.Column="1" Width="21" Height="21" Margin="179,0,0,0" Click="btnSelPrdct_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Source="/ProductTest;component/Resources/search.png" />
+            </StackPanel>
+        </Button>
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">开始时间：</Label>
+        <tk:DateTimePicker Grid.Row="1" Grid.Column="1" Width="200" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           x:Name="dtpStartTime" TimeFormat="LongTime" TextAlignment="Left"/>
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">白锈损失时间(小时)：</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbWeLossTime" Width="200" Height="21"/>
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">红锈损失时间(小时)：</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbReLossTime" Width="200" Height="21"/>
+        <Label Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">备注：</Label>
+        <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbRemark" Width="200" Height="21"/>
+        <Button Grid.Row="5" Grid.Column="0" x:Name="btnOk" Content="确定" Width="80" Height="23" HorizontalAlignment="Right" Click="btnOk_Click"/>
+        <Button Grid.Row="5" Grid.Column="1" x:Name="btnCancel" Content="取消" Width="80" Height="23" HorizontalAlignment="Right" Click="btnCancel_Click"/>
+    </Grid>
+</Window>

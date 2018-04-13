@@ -1,0 +1,16 @@
+E:\MyProjects\ProductTest\DataImportExport\bin\Debug\DataImportExport.dll
+E:\MyProjects\ProductTest\DataImportExport\bin\Debug\DataImportExport.pdb
+E:\MyProjects\ProductTest\DataImportExport\bin\Debug\Dongle.Utilities.dll
+E:\MyProjects\ProductTest\DataImportExport\bin\Debug\NPOI.dll
+E:\MyProjects\ProductTest\DataImportExport\obj\Debug\ResolveAssemblyReference.cache
+E:\MyProjects\ProductTest\DataImportExport\obj\Debug\DataImportExport.dll
+E:\MyProjects\ProductTest\DataImportExport\obj\Debug\DataImportExport.pdb
+E:\MyProjects\ProductTest\DataImportExport\bin\Debug\Dongle.Utilities.pdb
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\obj\Debug\ResolveAssemblyReference.cache
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\obj\Debug\DataImportExport.dll
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\bin\Debug\DataImportExport.dll
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\bin\Debug\DataImportExport.pdb
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\bin\Debug\Dongle.Utilities.dll
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\bin\Debug\NPOI.dll
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\bin\Debug\Dongle.Utilities.pdb
+D:\CwrkSuccware\MyProjects\ProductTest\DataImportExport\obj\Debug\DataImportExport.pdb
